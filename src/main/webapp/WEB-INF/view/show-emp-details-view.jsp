@@ -16,8 +16,12 @@
 <br>
 <%--    Your name :${param.employeeName}--%>
 Your name:${employee.name}
-<br>
+<br><br>
 Your surname: ${employee.surname}
-Your salsry: ${employee.salary}
+<br><br>
+Your salary: ${employee.salary}
+<br><br>
+Your department: ${employee.department}
+
 </body>
 </html>
