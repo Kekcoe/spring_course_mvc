@@ -1,9 +1,7 @@
 package com.kekcoe.spring.mvc;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,7 +12,13 @@ public class Employee {
 
     @NotBlank(message="surname is required field")
     private String surname;
+
+    @Min(value=500,message="must be greater than 499")
+    @Max(value=1000,message="must be less than 1001")
     private int salary;
+
+    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "please use pattern XXX-XX-XX")
+    private String phoneNumber;
     private String department;
     private Map<String,String> departments;
     private Map<String,String> carBrands;
@@ -110,6 +114,14 @@ public class Employee {
 
     public void setLanguages(String[] languages) {
         this.languages = languages;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     @Override

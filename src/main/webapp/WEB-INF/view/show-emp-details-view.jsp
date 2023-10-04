@@ -19,5 +19,7 @@ Your department: ${employee.department}
 Your car: ${employee.carBrand}
 <br><br>
 
+Phone Number: ${employee.phoneNumber}
+
 </body>
 </html>
