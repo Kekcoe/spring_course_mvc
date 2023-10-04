@@ -12,8 +12,10 @@
 
 <form:form action="showDetails" modelAttribute="employee">
     Name <form:input path="name"/>
+    <form:errors path="name"/>
     <br><br>
     Surname <form:input path="surname"/>
+    <form:errors path="surname"/>
     <br><br>
     Salary <form:input path="salary"/>
     <br><br>
@@ -23,10 +25,7 @@
     <br><br>
     Which car do you want?
     <form:radiobuttons path="carBrand" items="${employee.carBrands}"/>
-    <br><br>
-    Foreign Language(s)
-    <form:checkboxes path="languages" items="${employee.languageList}"/>
-    <br><br>
+      <br><br>
     <input type="submit" value="OK">
 </form:form>
 
