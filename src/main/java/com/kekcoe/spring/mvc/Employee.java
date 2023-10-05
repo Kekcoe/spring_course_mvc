@@ -1,5 +1,6 @@
 package com.kekcoe.spring.mvc;
 
+import com.kekcoe.spring.mvc.validation.CheckEmail;
 import jakarta.validation.constraints.*;
 
 import java.util.HashMap;
@@ -26,6 +27,8 @@ public class Employee {
     private String carBrand;
     private String[] languages;
 
+    @CheckEmail(value="abc.com", message = "email must ends with abc.com")
+    private String email;
 
     public Employee() {
         departments = new HashMap<>();
@@ -122,6 +125,14 @@ public class Employee {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
